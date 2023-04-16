@@ -1,0 +1,171 @@
+.wrapper {
+  height: 880px;
+  margin: 30px 100px 0 100px;
+  display: flex;
+  flex-direction: row;
+  .info {
+    flex-basis: 40%;
+    padding-left: 90px;
+    margin-top: 50px;
+    transform: translateX(-100%);
+    opacity: 0.5;
+
+    animation: infoAppearance 1s ease-in-out forwards;
+
+    .name {
+      font-size: 60px;
+      color: #ef6a73;
+      width: 600px;
+      word-wrap: break-word;
+
+      transition: all 0.4s ease;
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+    .description {
+      font-size: 35px;
+      color: #4c4c4c;
+      width: 600px;
+      word-wrap: break-word;
+
+      transition: all 0.4s ease;
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+    .add-to-basket {
+      position: relative;
+      height: 60px;
+      padding: 0px 32px;
+      font-size: 20px;
+      letter-spacing: 3px;
+      border-radius: 20px;
+      border: none;
+      font-weight: 600;
+      color: white;
+      background-color: #ef6a73;
+      cursor: pointer;
+
+      transition: all 0.8s ease;
+
+      .basket-btn {
+        transform: translate(-100%);
+        top: -8px;
+        position: absolute;
+        height: 70px;
+        width: 70px;
+        filter: invert(40%);
+        opacity: 0;
+
+        transition: all 1s ease-in-out;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        background-color: rgba(255, 255, 255, 0.453);
+        color: #ef6a73;
+        border: 5px solid #ef6a73;
+        box-shadow: 0 0 30px #ef6a73;
+      }
+      &:hover .basket-btn {
+        opacity: 1;
+        transform: translate(60%);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+  .ice-cream-img {
+    width: 700px;
+    height: 800px;
+    flex-basis: 40%;
+    transform: scale(0);
+    opacity: 0;
+
+    animation: iceCreamAppearance 1s ease-in-out both,
+      soar 3.5s ease-in-out infinite;
+  }
+  .composition {
+    width: 510px;
+    text-align: center;
+    padding-left: 0px;
+    margin: 50px 0;
+    user-select: none;
+    transform: translateX(100%);
+    opacity: 0.5;
+
+    animation: compositionAppearance 1s ease-in-out forwards;
+    .weight {
+      font-size: 60px;
+      color: #ef6a73;
+
+      transition: all 0.4s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    .calories {
+      font-size: 60px;
+      color: #ef6a73;
+
+      transition: all 0.4s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    .fat-content {
+      font-size: 60px;
+      color: #ef6a73;
+
+      transition: all 0.4s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    .price {
+      font-size: 60px;
+      color: #ef6a73;
+
+      transition: all 0.4s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@keyframes iceCreamAppearance {
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes soar {
+  0% {
+    transform: translateY(1%);
+  }
+
+  50% {
+    transform: translateY(-1%);
+  }
+  100% {
+    transform: translateY(1%);
+  }
+}
+@keyframes infoAppearance {
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes compositionAppearance {
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}

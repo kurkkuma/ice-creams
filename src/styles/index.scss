@@ -1,9 +1,10 @@
 @import "_main.scss";
-
+@import "_ice-cream.scss";
 body {
   background-image: url("../../images/background.png");
   background-repeat: no-repeat;
   background-size: cover;
+  overflow-x: hidden;
 }
 * {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
