@@ -41,7 +41,8 @@
       font-size: 20px;
       letter-spacing: 3px;
       border-radius: 20px;
-      border: none;
+      border: 5px solid #ef6a73;
+
       font-weight: 600;
       color: white;
       background-color: #ef6a73;
@@ -74,6 +75,10 @@
       }
       &:active {
         transform: scale(0.95);
+        background-color: #cbeec2d6;
+        color: #9ac58f;
+        border: 5px solid #ccfbc0;
+        box-shadow: 0 0 30px #b2e5a6;
       }
     }
   }

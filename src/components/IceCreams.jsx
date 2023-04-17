@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../App";
 
 function IceCream({
+  id,
   name,
   description,
   weight,
@@ -9,13 +11,15 @@ function IceCream({
   price,
   img,
 }) {
+  const { addToBasket } = useContext(AppContext);
+
   return (
     <div className="wrapper">
       <div className="info">
         <h2 className="name">{name}</h2>
         <p className="description">{description}</p>
-        <button className="add-to-basket">
-          Add to basket{" "}
+        <button onClick={() => addToBasket(id)} className="add-to-basket">
+          Add to basket
           <img
             className="basket-btn"
             src="../../images/icons/basket.png"
