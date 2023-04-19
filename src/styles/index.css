@@ -75,8 +75,8 @@
   justify-content: flex-end;
 }
 .main .nav img {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   filter: invert(40%);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -487,6 +487,11 @@ table tr {
 table .tr-head {
   background-color: rgba(255, 255, 255, 0.241);
 }
+table .tr-details {
+  font-size: 25px;
+  height: 50px;
+  color: #ef6a73;
+}
 table .tr-body.even {
   background-color: rgba(239, 106, 115, 0.1568627451);
 }
@@ -497,16 +502,19 @@ table .th-name {
   text-align: start;
 }
 table .td-number,
-table .th-number {
+table .th-number,
+table .td-details-number {
   text-align: center;
 }
-table .td-name {
+table .td-name,
+table .td-details-name {
   padding: 10px 0;
   display: flex;
   align-items: center;
 }
 table .td-price,
-table .th-price {
+table .th-price,
+table .td-details-price {
   text-align: end;
   padding-right: 20px;
 }
@@ -526,6 +534,10 @@ table .td-trash img:hover {
 }
 table .td-trash img:active {
   transform: rotate(0deg) scale(0.98);
+}
+table .element-img {
+  height: 55px;
+  width: 55px;
 }
 table img {
   height: 60px;
@@ -549,6 +561,71 @@ table img {
     opacity: 0;
   }
 }
+.makeIceCream .nav {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.makeIceCream .nav h3 {
+  padding-left: 20px;
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: #ef6a73;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.makeIceCream .nav .btn-home {
+  margin: 0;
+  padding-right: 25px;
+  width: 276px;
+  border: none;
+  background: transparent;
+  display: flex;
+  justify-content: flex-end;
+}
+.makeIceCream .nav img {
+  width: 60px;
+  height: 60px;
+  filter: invert(40%);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.makeIceCream .nav img:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+.makeIceCream .nav img:active {
+  transform: rotate(0deg) scale(0.98);
+}
+.makeIceCream .nav .btn-basket {
+  position: absolute;
+  margin: 0;
+  top: 5px;
+  right: 140px;
+  padding-right: 25px;
+  width: 276px;
+  border: none;
+  background: transparent;
+  display: flex;
+  justify-content: flex-end;
+}
+.makeIceCream .nav .btn-basket img {
+  width: 70px;
+  height: 70px;
+  filter: invert(40%);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.makeIceCream .nav .btn-basket img:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+.makeIceCream .nav .btn-basket img:active {
+  transform: rotate(0deg) scale(0.98);
+}
+
 body {
   background-image: url("../../images/background.png");
   background-repeat: no-repeat;

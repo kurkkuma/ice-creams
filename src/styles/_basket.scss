@@ -165,6 +165,11 @@ table {
   .tr-head {
     background-color: rgba(255, 255, 255, 0.241);
   }
+  .tr-details {
+    font-size: 25px;
+    height: 50px;
+    color: #ef6a73;
+  }
   .tr-body.even {
     background-color: #ef6a7328;
   }
@@ -175,16 +180,19 @@ table {
     text-align: start;
   }
   .td-number,
-  .th-number {
+  .th-number,
+  .td-details-number {
     text-align: center;
   }
-  .td-name {
+  .td-name,
+  .td-details-name {
     padding: 10px 0;
     display: flex;
     align-items: center;
   }
   .td-price,
-  .th-price {
+  .th-price,
+  .td-details-price {
     text-align: end;
     padding-right: 20px;
   }
@@ -206,6 +214,10 @@ table {
         transform: rotate(0deg) scale(0.98);
       }
     }
+  }
+  .element-img {
+    height: 55px;
+    width: 55px;
   }
 
   img {

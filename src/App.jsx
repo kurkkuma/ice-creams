@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import Main from "./components/Main";
 import Basket from "./components/Basket";
+import MakeIceCream from "./components/MakeIceCream";
 
 import { iceCreams } from "../data-ice-creams";
 import { scoops } from "../data-scoops";
@@ -69,11 +70,15 @@ function App() {
         toBuy,
         showSuccess,
         showError,
+        cones,
+        scoops,
+        additions,
       }}
     >
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/basket" element={<Basket />} />
+        <Route path="/make-your-own-ice-cream" element={<MakeIceCream />} />
       </Routes>
     </AppContext.Provider>
   );

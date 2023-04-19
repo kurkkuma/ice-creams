@@ -2,25 +2,23 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../App";
 
+import BasketItem from "./BasketItem";
+
 function Basket() {
-  const {
-    basket,
-    totalPrice,
-    deleteFromBasket,
-    toBuy,
-    showSuccess,
-    showError,
-  } = useContext(AppContext);
+  const { basket, totalPrice, toBuy, showSuccess, showError } =
+    useContext(AppContext);
 
   return (
     <div className="basket">
       <nav className="nav">
         <h3>Creamy Delight</h3>
-        <button className="btn-make">
-          <img className="star1" src="./images/icons/star-right.png" alt="" />
-          <img className="star2" src="./images/icons/star-left.png" alt="" />
-          Make own ice cream
-        </button>
+        <Link to="/make-your-own-ice-cream">
+          <button className="btn-make">
+            <img className="star1" src="./images/icons/star-right.png" alt="" />
+            <img className="star2" src="./images/icons/star-left.png" alt="" />
+            Make own ice cream
+          </button>
+        </Link>
         <Link to="/">
           <button className="btn-home">
             <img src="./images/icons/home.png" alt="" />
@@ -41,24 +39,14 @@ function Basket() {
         <tbody>
           {basket.map((item, index) => {
             return (
-              <tr
+              <BasketItem
+                id={item.id}
                 key={index}
-                className={`tr-body ${(index + 1) % 2 === 0 ? "even" : "odd"}`}
-              >
-                <td className="td-number">{index + 1}</td>
-                <td className="td-name">
-                  <img src={`../.${item.img}`} alt="" />
-                  {item.name}
-                </td>
-                <td className="td-price">{item.price}$</td>
-                <td className="td-trash">
-                  <img
-                    onClick={() => deleteFromBasket(item.id)}
-                    src="../images/icons/trash.png"
-                    alt="trash-icon"
-                  />
-                </td>
-              </tr>
+                index={index}
+                name={item.name}
+                price={item.price}
+                img={item.img}
+              />
             );
           })}
         </tbody>
