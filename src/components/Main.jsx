@@ -42,6 +42,7 @@ function Main() {
             </button>
           </Link>
         </nav>
+
         <div onClick={handlePrev} className="left">
           <img src="../../images/icons/left.png" alt="" />
         </div>

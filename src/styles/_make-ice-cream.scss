@@ -132,7 +132,7 @@
     .elements-info {
       border: 4px dotted #ef6a73;
       padding: 10px;
-      margin: 40px 100px;
+      margin: 10px 100px;
       flex-basis: 40%;
       display: flex;
       flex-direction: column;
@@ -140,34 +140,76 @@
 
       h2 {
         margin: 0;
-        font-size: 55px;
+        font-size: 50px;
         letter-spacing: 3px;
         color: #ef6a73;
         user-select: none;
       }
       h3 {
-        margin: 15px 0 10px 0;
+        margin: 5px 0 5px 0;
         font-size: 35px;
         letter-spacing: 3px;
         color: #ef6a73;
         user-select: none;
       }
-      p {
-        padding-bottom: 40px;
+
+      .selected {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 10px 0;
+        margin: 10px 0;
+        border-top: 3px solid #4c4c4c;
         border-bottom: 3px solid #4c4c4c;
+
+        div {
+          margin: 8px;
+          padding: 10px 0;
+          height: 30px;
+          width: 550px;
+          display: flex;
+          justify-content: flex-start;
+          img {
+            align-self: center;
+            width: 65px;
+            height: 70px;
+          }
+          p {
+            padding-left: 20px;
+            text-align: start;
+            align-self: center;
+            color: #ef6a73;
+            font-size: 30px;
+          }
+          .delete-el {
+            height: 50px;
+            width: 45px;
+            padding: 0 10px;
+            filter: invert(40%);
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+              transform: rotate(5deg) scale(1.1);
+            }
+            &:active {
+              transform: rotate(0deg) scale(0.98);
+            }
+          }
+        }
+      }
+      p {
+        margin: 5px 0;
+        padding-bottom: 10px;
         text-align: center;
         font-size: 35px;
         color: #4c4c4c;
-        width: 455px;
+        width: 555px;
       }
       .make-btn {
-        // border: 2px solid green;
-        // height: 10%;
-        margin: 10px 0;
         width: 65%;
         display: flex;
-        justify-content: space-between;
-
+        justify-content: center;
+        gap: 50px;
         button {
           // margin: auto;
           width: 200px;
@@ -197,8 +239,7 @@
         }
       }
       .make-btn2 {
-        padding-top: 70px;
-        border-top: 3px solid #4c4c4c;
+        padding-top: 10px;
       }
     }
   }

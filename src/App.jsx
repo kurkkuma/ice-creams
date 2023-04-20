@@ -24,11 +24,19 @@ function App() {
   });
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
+  const [activeStep, setActiveStep] = useState(0);
+  const [newIceCream, setNewIceCream] = useState([]);
+  const [newTotalPrice, setNewTotalPrice] = useState(0);
 
   useEffect(() => {
     localStorage.setItem("basket", JSON.stringify(basket));
     localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
   }, [basket, totalPrice]);
+  useEffect(() => {
+    setNewTotalPrice(
+      newIceCream.reduce((totalPrice, el) => totalPrice + el.price, 0)
+    );
+  }, [newIceCream]);
 
   const addToBasket = (id) => {
     let selectedItem = iceCreams.find((item) => item.id === id);
@@ -58,6 +66,11 @@ function App() {
       }, 6000);
     }
   };
+  const deleteElement = (id) => {
+    const deletedElement = newIceCream.find((item) => item.id == id);
+    setNewIceCream(newIceCream.filter((item) => item.id !== id));
+    setNewTotalPrice((prev) => prev - deletedElement.price);
+  };
 
   return (
     <AppContext.Provider
@@ -73,6 +86,15 @@ function App() {
         cones,
         scoops,
         additions,
+        newIceCream,
+        setNewIceCream,
+        activeStep,
+        setActiveStep,
+        deleteElement,
+        newTotalPrice,
+        setNewTotalPrice,
+        setBasket,
+        setTotalPrice,
       }}
     >
       <Routes>

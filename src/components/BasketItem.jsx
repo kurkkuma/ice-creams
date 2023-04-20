@@ -41,7 +41,6 @@ function BasketItem({ id, index, name, price, img }) {
       });
     });
     return elements;
-    // setElements(elements);
   });
 
   return (
@@ -71,11 +70,7 @@ function BasketItem({ id, index, name, price, img }) {
               <td className="td-details-number">{index + 1}</td>
 
               <td className="td-details-name">
-                <img
-                  className="element-img"
-                  src={`../.${item.img}`}
-                  alt="trash-icon"
-                />
+                <img className="element-img" src={`../.${item.img}`} alt="" />
                 {item.name}
               </td>
               <td className="td-details-price">{item.price}$</td>

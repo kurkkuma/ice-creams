@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AppContext } from "../App";
+
+import CarouselElements from "./CarouselElements";
 
 function MakeIceCream() {
+  const { cones, scoops, additions, activeStep, setActiveStep } =
+    useContext(AppContext);
+
+  const steps = [cones, scoops, scoops, scoops, additions, additions];
+  const stepsName = [
+    "cone",
+    "scoop 1/3",
+    "scoop 2/3",
+    "scoop 3/3",
+    "addition 1/2",
+    "addition 2/2",
+  ];
+
+  const handlePrevStep = () => {
+    setActiveStep(activeStep === 0 ? steps.length - 1 : activeStep - 1);
+  };
+  const handleNextStep = () => {
+    setActiveStep(activeStep === steps.length - 1 ? 0 : activeStep + 1);
+  };
   return (
     <div className="makeIceCream">
       <nav className="nav">
@@ -17,35 +39,22 @@ function MakeIceCream() {
           </button>
         </Link>
       </nav>
-      <div className="make-wrapper">
-        <div className="elements">
-          <div className="make-prev">
-            <img src="../../images/icons/left.png" alt="" />
-          </div>
-          <img
-            className="ice-cream-element"
-            src="../../images/scoops/Strawberry-Fields.png"
-            alt=""
-          />
-          <div className="make-next">
-            <img className="right" src="../../images/icons/right.png" alt="" />
-          </div>
-        </div>
 
-        <div className="elements-info">
-          <h2>Step 1/6</h2>
-          <h3>Choose a cone</h3>
-          <p>ice cream name 2$</p>
-          <div className="make-btn">
-            <button>Choose</button>
-            <button>Skip</button>
-          </div>
-          <h3>Toral price: 3$</h3>
-          <div className="make-btn make-btn2">
-            <button>Back</button>
-            <button>Complete</button>
-          </div>
-        </div>
+      <div className="make-wrapper">
+        {steps.map((item, index) => {
+          if (activeStep === index) {
+            return (
+              <CarouselElements
+                key={index}
+                index={index + 1}
+                kind={item}
+                name={stepsName[index]}
+                handlePrevStep={handlePrevStep}
+                handleNextStep={handleNextStep}
+              />
+            );
+          }
+        })}
       </div>
     </div>
   );

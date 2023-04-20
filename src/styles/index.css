@@ -689,7 +689,7 @@ table img {
 .makeIceCream .make-wrapper .elements-info {
   border: 4px dotted #ef6a73;
   padding: 10px;
-  margin: 40px 100px;
+  margin: 10px 100px;
   flex-basis: 40%;
   display: flex;
   flex-direction: column;
@@ -697,7 +697,7 @@ table img {
 }
 .makeIceCream .make-wrapper .elements-info h2 {
   margin: 0;
-  font-size: 55px;
+  font-size: 50px;
   letter-spacing: 3px;
   color: #ef6a73;
   -webkit-user-select: none;
@@ -705,7 +705,7 @@ table img {
           user-select: none;
 }
 .makeIceCream .make-wrapper .elements-info h3 {
-  margin: 15px 0 10px 0;
+  margin: 5px 0 5px 0;
   font-size: 35px;
   letter-spacing: 3px;
   color: #ef6a73;
@@ -713,19 +713,61 @@ table img {
      -moz-user-select: none;
           user-select: none;
 }
-.makeIceCream .make-wrapper .elements-info p {
-  padding-bottom: 40px;
+.makeIceCream .make-wrapper .elements-info .selected {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 10px 0;
+  margin: 10px 0;
+  border-top: 3px solid #4c4c4c;
   border-bottom: 3px solid #4c4c4c;
+}
+.makeIceCream .make-wrapper .elements-info .selected div {
+  margin: 8px;
+  padding: 10px 0;
+  height: 30px;
+  width: 550px;
+  display: flex;
+  justify-content: flex-start;
+}
+.makeIceCream .make-wrapper .elements-info .selected div img {
+  align-self: center;
+  width: 65px;
+  height: 70px;
+}
+.makeIceCream .make-wrapper .elements-info .selected div p {
+  padding-left: 20px;
+  text-align: start;
+  align-self: center;
+  color: #ef6a73;
+  font-size: 30px;
+}
+.makeIceCream .make-wrapper .elements-info .selected div .delete-el {
+  height: 50px;
+  width: 45px;
+  padding: 0 10px;
+  filter: invert(40%);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.makeIceCream .make-wrapper .elements-info .selected div .delete-el:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+.makeIceCream .make-wrapper .elements-info .selected div .delete-el:active {
+  transform: rotate(0deg) scale(0.98);
+}
+.makeIceCream .make-wrapper .elements-info p {
+  margin: 5px 0;
+  padding-bottom: 10px;
   text-align: center;
   font-size: 35px;
   color: #4c4c4c;
-  width: 455px;
+  width: 555px;
 }
 .makeIceCream .make-wrapper .elements-info .make-btn {
-  margin: 10px 0;
   width: 65%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 50px;
 }
 .makeIceCream .make-wrapper .elements-info .make-btn button {
   width: 200px;
@@ -752,8 +794,7 @@ table img {
   transform: scale(0.95);
 }
 .makeIceCream .make-wrapper .elements-info .make-btn2 {
-  padding-top: 70px;
-  border-top: 3px solid #4c4c4c;
+  padding-top: 10px;
 }
 
 body {
