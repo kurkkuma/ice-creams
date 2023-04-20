@@ -6,7 +6,6 @@ import IceCreams from "./IceCreams";
 
 function Main() {
   const { iceCreams } = useContext(AppContext);
-
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handlePrev = () => {
@@ -42,14 +41,12 @@ function Main() {
             </button>
           </Link>
         </nav>
-
         <div onClick={handlePrev} className="left">
           <img src="../../images/icons/left.png" alt="" />
         </div>
         <div onClick={handleNext} className="right">
           <img className="right" src="../../images/icons/right.png" alt="" />
         </div>
-
         {iceCreams.map((ice, index) => {
           if (activeIndex === index) {
             return (

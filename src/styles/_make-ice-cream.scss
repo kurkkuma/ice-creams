@@ -64,7 +64,7 @@
     }
   }
   .make-wrapper {
-    // border: 2px solid red;
+    overflow: hidden;
     width: 100%;
     height: 900px;
     display: flex;
@@ -83,6 +83,12 @@
         padding-left: 40px;
         flex-basis: 10%;
         align-self: center;
+        opacity: 0;
+        transform: translateX(200%);
+        user-select: none;
+        transform-origin: center;
+
+        animation: showPrev 1s ease forwards;
 
         cursor: pointer;
 
@@ -107,6 +113,12 @@
         flex-basis: 10%;
         align-self: center;
         cursor: pointer;
+        opacity: 0;
+        transform: translateX(-200%);
+        transform-origin: center;
+        user-select: none;
+
+        animation: showNext 1s ease forwards;
 
         img {
           height: 130px;
@@ -126,20 +138,39 @@
       .ice-cream-element {
         align-self: center;
         flex-basis: 85%;
-        transform: scale(0.7);
+        transform: scale(0.2) translateY(200%);
+        opacity: 0;
+        user-select: none;
+
+        animation: showElement 1.5s ease both, soar 2s ease 1.6s infinite;
+
+        &.prev {
+          transform: scale(0.7) translateY(1%) translateX(-50%);
+
+          animation: prevAppearance 1s ease both, soar 2s ease 1s infinite;
+        }
+        &.next {
+          transform: scale(0.7) translateY(1%) translateX(50%);
+
+          animation: nextAppearance 1s ease both, soar 2s ease 1.2s infinite;
+        }
       }
     }
     .elements-info {
       border: 4px dotted #ef6a73;
       padding: 10px;
-      margin: 10px 100px;
+      margin: 30px 100px;
       flex-basis: 40%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      transform: translateX(150%);
+      opacity: 0.5;
+
+      animation: showInfo 1.5s ease forwards;
 
       h2 {
-        margin: 0;
+        margin: 5px 0;
         font-size: 50px;
         letter-spacing: 3px;
         color: #ef6a73;
@@ -157,12 +188,13 @@
         display: flex;
         flex-direction: column-reverse;
         padding: 10px 0;
-        margin: 10px 0;
+        margin: 15px 0;
         border-top: 3px solid #4c4c4c;
         border-bottom: 3px solid #4c4c4c;
+        user-select: none;
 
         div {
-          margin: 8px;
+          margin: 2px;
           padding: 10px 0;
           height: 30px;
           width: 550px;
@@ -179,6 +211,9 @@
             align-self: center;
             color: #ef6a73;
             font-size: 30px;
+            user-select: none;
+
+            cursor: pointer;
           }
           .delete-el {
             height: 50px;
@@ -198,7 +233,7 @@
         }
       }
       p {
-        margin: 5px 0;
+        margin: 15px 0;
         padding-bottom: 10px;
         text-align: center;
         font-size: 35px;
@@ -206,12 +241,12 @@
         width: 555px;
       }
       .make-btn {
+        margin: 5px 0 20px 0;
         width: 65%;
         display: flex;
         justify-content: center;
         gap: 50px;
         button {
-          // margin: auto;
           width: 200px;
           height: 60px;
           padding: 10px 20px;
@@ -223,6 +258,8 @@
           font-weight: 600;
           color: white;
           background-color: #ef6a73;
+          user-select: none;
+
           cursor: pointer;
 
           transition: all 0.8s ease;
@@ -238,9 +275,54 @@
           }
         }
       }
-      .make-btn2 {
-        padding-top: 10px;
-      }
     }
+  }
+}
+@keyframes showPrev {
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes showNext {
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes showInfo {
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes showElement {
+  100% {
+    transform: scale(0.7) translateY(1%);
+    opacity: 1;
+  }
+}
+@keyframes soar {
+  0% {
+    transform: scale(0.7) translateY(1%);
+  }
+
+  50% {
+    transform: scale(0.7) translateY(-1%);
+  }
+  100% {
+    transform: scale(0.7) translateY(1%);
+  }
+}
+@keyframes prevAppearance {
+  100% {
+    transform: translateX(0) scale(0.7) translateY(1%);
+    opacity: 1;
+  }
+}
+@keyframes nextAppearance {
+  100% {
+    transform: translateX(0) scale(0.7) translateY(1%);
+    opacity: 1;
   }
 }

@@ -39,7 +39,6 @@ function MakeIceCream() {
           </button>
         </Link>
       </nav>
-
       <div className="make-wrapper">
         {steps.map((item, index) => {
           if (activeStep === index) {

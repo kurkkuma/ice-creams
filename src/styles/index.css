@@ -26,6 +26,9 @@
   font-weight: 600;
   color: white;
   background-color: #ef6a73;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   cursor: pointer;
   transition: all 0.8s ease;
 }
@@ -79,6 +82,9 @@
   height: 70px;
   filter: invert(40%);
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   transition: all 0.2s ease-in-out;
 }
 .main .nav img:hover {
@@ -117,6 +123,9 @@
   position: absolute;
   height: 130px;
   width: 40px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   cursor: pointer;
 }
 .main .left img {
@@ -139,6 +148,9 @@
   position: absolute;
   height: 130px;
   width: 40px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   cursor: pointer;
 }
 .main .right img {
@@ -187,6 +199,9 @@
   color: #ef6a73;
   width: 600px;
   word-wrap: break-word;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   transition: all 0.4s ease;
 }
 .wrapper .info .name:hover {
@@ -197,6 +212,9 @@
   color: #4c4c4c;
   width: 600px;
   word-wrap: break-word;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   transition: all 0.4s ease;
 }
 .wrapper .info .description:hover {
@@ -210,6 +228,9 @@
   letter-spacing: 3px;
   border-radius: 20px;
   border: 5px solid #ef6a73;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   font-weight: 600;
   color: white;
   background-color: #ef6a73;
@@ -250,6 +271,9 @@
   flex-basis: 40%;
   transform: scale(0);
   opacity: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   animation: iceCreamAppearance 1s ease-in-out both, soar 3.5s ease-in-out infinite;
 }
 .wrapper .composition {
@@ -351,6 +375,9 @@
   letter-spacing: 3px;
   border-radius: 20px;
   border: 5px solid #ef6a73;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   font-weight: 600;
   color: white;
   background-color: #ef6a73;
@@ -401,6 +428,9 @@
   background: transparent;
   display: flex;
   justify-content: flex-end;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .basket .nav img {
   width: 60px;
@@ -422,6 +452,9 @@
   font-size: 50px;
   margin: auto;
   color: #ef6a73;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .basket p {
   width: 30%;
@@ -430,6 +463,9 @@
   color: #4c4c4c;
   font-size: 20px;
   letter-spacing: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .basket .end {
   display: flex;
@@ -437,6 +473,9 @@
   justify-content: center;
   gap: 30px;
   margin-bottom: 200px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .basket .end p {
   opacity: 1;
@@ -455,6 +494,9 @@
   color: white;
   background-color: #ef6a73;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   transition: all 0.8s ease;
 }
 .basket .btn-buy:hover {
@@ -472,6 +514,9 @@ table {
   border: 4px dotted #ef6a73;
   width: 80%;
   margin: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 table thead {
   font-size: 30px;
@@ -626,6 +671,7 @@ table img {
   transform: rotate(0deg) scale(0.98);
 }
 .makeIceCream .make-wrapper {
+  overflow: hidden;
   width: 100%;
   height: 900px;
   display: flex;
@@ -644,6 +690,13 @@ table img {
   padding-left: 40px;
   flex-basis: 10%;
   align-self: center;
+  opacity: 0;
+  transform: translateX(200%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transform-origin: center;
+  animation: showPrev 1s ease forwards;
   cursor: pointer;
 }
 .makeIceCream .make-wrapper .elements .make-prev img {
@@ -666,6 +719,13 @@ table img {
   flex-basis: 10%;
   align-self: center;
   cursor: pointer;
+  opacity: 0;
+  transform: translateX(-200%);
+  transform-origin: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  animation: showNext 1s ease forwards;
 }
 .makeIceCream .make-wrapper .elements .make-next img {
   height: 130px;
@@ -684,19 +744,35 @@ table img {
 .makeIceCream .make-wrapper .elements .ice-cream-element {
   align-self: center;
   flex-basis: 85%;
-  transform: scale(0.7);
+  transform: scale(0.2) translateY(200%);
+  opacity: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  animation: showElement 1.5s ease both, soar 2s ease 1.6s infinite;
+}
+.makeIceCream .make-wrapper .elements .ice-cream-element.prev {
+  transform: scale(0.7) translateY(1%) translateX(-50%);
+  animation: prevAppearance 1s ease both, soar 2s ease 1s infinite;
+}
+.makeIceCream .make-wrapper .elements .ice-cream-element.next {
+  transform: scale(0.7) translateY(1%) translateX(50%);
+  animation: nextAppearance 1s ease both, soar 2s ease 1.2s infinite;
 }
 .makeIceCream .make-wrapper .elements-info {
   border: 4px dotted #ef6a73;
   padding: 10px;
-  margin: 10px 100px;
+  margin: 30px 100px;
   flex-basis: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: translateX(150%);
+  opacity: 0.5;
+  animation: showInfo 1.5s ease forwards;
 }
 .makeIceCream .make-wrapper .elements-info h2 {
-  margin: 0;
+  margin: 5px 0;
   font-size: 50px;
   letter-spacing: 3px;
   color: #ef6a73;
@@ -717,12 +793,15 @@ table img {
   display: flex;
   flex-direction: column-reverse;
   padding: 10px 0;
-  margin: 10px 0;
+  margin: 15px 0;
   border-top: 3px solid #4c4c4c;
   border-bottom: 3px solid #4c4c4c;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .makeIceCream .make-wrapper .elements-info .selected div {
-  margin: 8px;
+  margin: 2px;
   padding: 10px 0;
   height: 30px;
   width: 550px;
@@ -740,6 +819,10 @@ table img {
   align-self: center;
   color: #ef6a73;
   font-size: 30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
 }
 .makeIceCream .make-wrapper .elements-info .selected div .delete-el {
   height: 50px;
@@ -756,7 +839,7 @@ table img {
   transform: rotate(0deg) scale(0.98);
 }
 .makeIceCream .make-wrapper .elements-info p {
-  margin: 5px 0;
+  margin: 15px 0;
   padding-bottom: 10px;
   text-align: center;
   font-size: 35px;
@@ -764,6 +847,7 @@ table img {
   width: 555px;
 }
 .makeIceCream .make-wrapper .elements-info .make-btn {
+  margin: 5px 0 20px 0;
   width: 65%;
   display: flex;
   justify-content: center;
@@ -780,6 +864,9 @@ table img {
   font-weight: 600;
   color: white;
   background-color: #ef6a73;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   cursor: pointer;
   transition: all 0.8s ease;
 }
@@ -793,10 +880,54 @@ table img {
 .makeIceCream .make-wrapper .elements-info .make-btn button:active {
   transform: scale(0.95);
 }
-.makeIceCream .make-wrapper .elements-info .make-btn2 {
-  padding-top: 10px;
-}
 
+@keyframes showPrev {
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes showNext {
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes showInfo {
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes showElement {
+  100% {
+    transform: scale(0.7) translateY(1%);
+    opacity: 1;
+  }
+}
+@keyframes soar {
+  0% {
+    transform: scale(0.7) translateY(1%);
+  }
+  50% {
+    transform: scale(0.7) translateY(-1%);
+  }
+  100% {
+    transform: scale(0.7) translateY(1%);
+  }
+}
+@keyframes prevAppearance {
+  100% {
+    transform: translateX(0) scale(0.7) translateY(1%);
+    opacity: 1;
+  }
+}
+@keyframes nextAppearance {
+  100% {
+    transform: translateX(0) scale(0.7) translateY(1%);
+    opacity: 1;
+  }
+}
 body {
   background-image: url("../../images/background.png");
   background-repeat: no-repeat;

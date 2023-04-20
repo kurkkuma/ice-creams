@@ -17,6 +17,7 @@
       color: #ef6a73;
       width: 600px;
       word-wrap: break-word;
+      user-select: none;
 
       transition: all 0.4s ease;
       &:hover {
@@ -28,6 +29,7 @@
       color: #4c4c4c;
       width: 600px;
       word-wrap: break-word;
+      user-select: none;
 
       transition: all 0.4s ease;
       &:hover {
@@ -42,6 +44,7 @@
       letter-spacing: 3px;
       border-radius: 20px;
       border: 5px solid #ef6a73;
+      user-select: none;
 
       font-weight: 600;
       color: white;
@@ -88,6 +91,7 @@
     flex-basis: 40%;
     transform: scale(0);
     opacity: 0;
+    user-select: none;
 
     animation: iceCreamAppearance 1s ease-in-out both,
       soar 3.5s ease-in-out infinite;

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../App";
 
@@ -53,7 +53,6 @@ function Basket() {
       </table>
       <div className="end">
         <h2>Your total price: {Number(totalPrice.toFixed(2))}$</h2>
-
         <button onClick={toBuy} className="btn-buy">
           Buy
         </button>

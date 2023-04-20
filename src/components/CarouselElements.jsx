@@ -22,12 +22,15 @@ function CarouselElements({
     setTotalPrice,
   } = useContext(AppContext);
   const [activeElIndex, setActiveElIndex] = useState(0);
+  const [isPrev, setIsPrev] = useState(0);
 
   const handleElPrev = () => {
     setActiveElIndex(activeElIndex === 0 ? kind.length - 1 : activeElIndex - 1);
+    setIsPrev(true);
   };
   const handleElNext = () => {
     setActiveElIndex(activeElIndex === kind.length - 1 ? 0 : activeElIndex + 1);
+    setIsPrev(false);
   };
   const handleSelectEl = () => {
     const selectedEl = {
@@ -80,7 +83,9 @@ function CarouselElements({
             return (
               <img
                 key={index}
-                className="ice-cream-element"
+                className={`ice-cream-element ${
+                  isPrev ? "prev" : isPrev === false ? "next" : ""
+                }`}
                 src={`../.${item.img}`}
                 alt=""
               />
@@ -113,7 +118,9 @@ function CarouselElements({
             return (
               <div key={index}>
                 <img src={`../.${item.img}`} alt="" />
-                <p>{`${item.name} | ${item.price}$`}</p>
+                <p
+                  onClick={() => setActiveStep(index)}
+                >{`${item.name} | ${item.price}$`}</p>
                 {item.id !== 1 && item.id !== 2 && (
                   <img
                     onClick={() => deleteElement(item.id)}

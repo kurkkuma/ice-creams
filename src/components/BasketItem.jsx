@@ -1,11 +1,12 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { AppContext } from "../App";
 
 function BasketItem({ id, index, name, price, img }) {
-  const { basket, deleteFromBasket, cones, scoops, additions } =
-    useContext(AppContext);
+  const { basket, deleteFromBasket, cones } = useContext(AppContext);
   const [showDetails, setShowDetails] = useState(false);
-  const [elements, setElements] = useState(() => {
+  const [elements, setElements] = useState();
+
+  useEffect(() => {
     let elements = [];
 
     if (basket[index].additions) {
@@ -18,7 +19,6 @@ function BasketItem({ id, index, name, price, img }) {
         });
       });
     }
-
     basket[index].scoops.forEach((scoop) => {
       elements.push({
         id: scoop.id,
@@ -27,7 +27,6 @@ function BasketItem({ id, index, name, price, img }) {
         price: scoop.price,
       });
     });
-
     basket[index].elements.forEach((element) => {
       cones.forEach((cone) => {
         if (cone.name === element) {
@@ -40,8 +39,8 @@ function BasketItem({ id, index, name, price, img }) {
         }
       });
     });
-    return elements;
-  });
+    setElements(elements);
+  }, [basket]);
 
   return (
     <React.Fragment key={index}>
@@ -68,7 +67,6 @@ function BasketItem({ id, index, name, price, img }) {
           return (
             <tr key={index} className="tr-details">
               <td className="td-details-number">{index + 1}</td>
-
               <td className="td-details-name">
                 <img className="element-img" src={`../.${item.img}`} alt="" />
                 {item.name}

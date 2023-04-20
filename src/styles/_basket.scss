@@ -21,6 +21,7 @@
       letter-spacing: 3px;
       border-radius: 20px;
       border: 5px solid #ef6a73;
+      user-select: none;
 
       font-weight: 600;
       color: white;
@@ -74,6 +75,7 @@
       background: transparent;
       display: flex;
       justify-content: flex-end;
+      user-select: none;
     }
     img {
       width: 60px;
@@ -97,6 +99,7 @@
     font-size: 50px;
     margin: auto;
     color: #ef6a73;
+    user-select: none;
   }
   p {
     width: 30%;
@@ -105,6 +108,7 @@
     color: #4c4c4c;
     font-size: 20px;
     letter-spacing: 5px;
+    user-select: none;
   }
   .end {
     display: flex;
@@ -112,6 +116,7 @@
     justify-content: center;
     gap: 30px;
     margin-bottom: 200px;
+    user-select: none;
 
     p {
       opacity: 1;
@@ -132,6 +137,7 @@
     color: white;
     background-color: #ef6a73;
     cursor: pointer;
+    user-select: none;
 
     transition: all 0.8s ease;
     &:hover {
@@ -150,6 +156,7 @@ table {
   border: 4px dotted #ef6a73;
   width: 80%;
   margin: auto;
+  user-select: none;
 
   thead {
     font-size: 30px;
